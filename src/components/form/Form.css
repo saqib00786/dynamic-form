@@ -1,7 +1,30 @@
 .inputField {
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin: 8px;
-    border: 1px solid #ccc;
+    height: 30px;
+    width: 100%;
+    padding: 4px 16px;
     border-radius: 5px;
+    margin: 4px auto;
+}
+
+.button {
+    height: 30px;
+    width: 100%;
+    padding : 4px 16px;
+    border-radius: 5px;
+    margin: 4px auto;
+
+}
+.drop-down{
+    height: 30px;
+    width: 80%;
+    padding : 4px 16px;
+    border-radius: 5px;
+    margin: 4px auto;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 }

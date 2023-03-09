@@ -6,13 +6,7 @@ import { RegisterFields } from "./components/form/json/register";
 function App() {
   return (
     <div className="App">
-      <div className="login">
-        <Form FormFields={loginFields} />
-      </div>
-
-      <div className="signUp">
-        <Form FormFields={RegisterFields} />
-      </div>
+      <Form FormFields={loginFields} />
     </div>
   );
 }
