@@ -1,12 +1,12 @@
 import React from "react";
 
-export const HelperComponent = ({ field }) => {
+export const HelperComponent = ({ field,onClick }) => {
   switch (field.inputType) {
     case "input":
       return <input {...field} />;
 
     case "button":
-      return <button {...field}>{field.title}</button>;
+      return <button onClick={onClick} {...field}>{field.title}</button>;
 
     case "text":
       return <p {...field}>{field.title}</p>;
