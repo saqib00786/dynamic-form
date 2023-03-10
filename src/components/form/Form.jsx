@@ -1,17 +1,39 @@
 import React from "react";
 import "./Form.css";
-import { HelperComponent } from "./Form.Helper";
+import CloneComponent from "./CloneComponent";
 
-const Form = ({ FormFields,handleClick,handleRegister }) => {
+const Form = ({
+  fields,
+  values,
+  handleChange,
+  handleBlur,
+  handleSubmit,
+  errors,
+  setFieldValue,
+}) => {
   return (
     <div className="form">
-      {FormFields.map((field, index) => {
-        return <HelperComponent field={field} onClick={field.name === 'login' ? handleClick : handleRegister} />;
+      {fields.map((elementAttribs, index) => {
+        let _props = {
+          form: elementAttribs,
+          onChange: handleChange(elementAttribs.name),
+          onBlur: handleBlur(elementAttribs.name),
+          value: values[elementAttribs.name],
+          setFieldValue: setFieldValue,
+        };
+
+        if (elementAttribs?.name == "submit") {
+          _props = { ..._props, onClick: handleSubmit };
+        }
+
+        return (
+          <div className="form-group" key={elementAttribs?.name}>
+            <CloneComponent {..._props} />
+          </div>
+        );
       })}
     </div>
   );
-
-  
 };
 
 export default Form;

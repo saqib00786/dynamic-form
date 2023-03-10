@@ -1,7 +1,6 @@
 import "../Form.css";
 export const loginFields = [
   {
-    inputType: "input",
     placeholder: "Email",
     type: "email",
     name: "email",
@@ -9,15 +8,15 @@ export const loginFields = [
     // style : {backgroundColor : 'red', padding : 12}
   },
   {
-    inputType: "input",
     placeholder: "User Name",
     type: "text",
     name: "userName",
     className: "inputField",
   },
   {
-    inputType: "drop-down",
+    inputType: "select",
     placeholder: "Select Gender",
+    label : 'Gender',
     options: [
       {
         label: "Male",
@@ -30,38 +29,28 @@ export const loginFields = [
       {
         label: "Other",
         value: "Other",
-      }
+      },
     ],
-    name : 'gender',
+    name: "gender",
     className: "drop-down",
   },
   {
-    inputType: "input",
     placeholder: "Password",
     type: "password",
     name: "password",
-    secureTextEntry: true,
     className: "inputField",
   },
   {
-    inputType: "input",
     placeholder: "Confirm Password",
     type: "password",
     name: "confirmPassword",
-    secureTextEntry: true,
     className: "inputField",
   },
   {
     inputType: "button",
-    title: "Login",
-    value: "Login",
-    name: "login",
-    className: "button",
-  },
-  {
-    inputType: "button",
-    title: "Register",
-    name: "register",
+    label: "Login",
+    // value: "Login",
+    name: "submit",
     className: "button",
   },
 ];
