@@ -1,4 +1,5 @@
 import "../Form.css";
+import { UserProfession } from "./UserProfession";
 export const loginFields = [
   {
     placeholder: "Email",
@@ -32,6 +33,23 @@ export const loginFields = [
       },
     ],
     name: "gender",
+    className: "drop-down",
+  },
+  {
+    inputType: "select",
+    placeholder: "Select User",
+    label: "User",
+    options: [],
+    url: "https://jsonplaceholder.typicode.com/users",
+    name: "user",
+    className: "drop-down",
+  },
+  {
+    inputType: "select",
+    placeholder: "Select Profession",
+    label: "Profession",
+    options: UserProfession,
+    name: "profession",
     className: "drop-down",
   },
   {
