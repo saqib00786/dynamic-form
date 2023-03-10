@@ -53,6 +53,17 @@ export const loginFields = [
     className: "drop-down",
   },
   {
+    inputType: "select",
+    placeholder: "Select other user list",
+    label: "User List",
+    options: [],
+    url: "https://jsonplaceholder.typicode.com/posts",
+    valueAttribute: "id",
+    labelAttribute: "title",
+    name: "other_user",
+    className: "drop-down",
+  },
+  {
     placeholder: "Password",
     type: "password",
     name: "password",

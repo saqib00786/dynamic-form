@@ -11,6 +11,7 @@ const SelectInput = ({
   placeholder,
   ...otherProps
 }) => {
+  console.log("🚀 ~ file: SelectInput.jsx:14 ~ url:", url)
 //   const [option, setOptions] = useState(
 //     otherProps?.value ? parseInt(otherProps?.value) : otherProps?.value
 //   );
