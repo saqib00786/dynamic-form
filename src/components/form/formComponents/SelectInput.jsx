@@ -7,9 +7,14 @@ const SelectInput = ({
   url = "",
   valueAttribute = "id",
   labelAttribute = "name",
+  setFieldValue,
+  placeholder,
   ...otherProps
 }) => {
-  const [option, setOptions] = useState([]);
+//   const [option, setOptions] = useState(
+//     otherProps?.value ? parseInt(otherProps?.value) : otherProps?.value
+//   );
+//   console.log("🚀 ~ file: SelectInput.jsx:16 ~ option:", option);
   const [filteredList, setFilteredList] = useState(options);
 
   useEffect(() => {
@@ -31,13 +36,29 @@ const SelectInput = ({
     }
   };
 
+  const onValChange = (value) => {
+    console.log(
+      "🚀 ~ file: SelectInput.jsx:38 ~ onValueChange ~ value:",
+      value
+    );
+    // setOptions(value);
+    setFieldValue(name, value);
+  };
+
   return (
     <div>
-      <select value={options} onChange={(e) => {}} {...otherProps}>
-        {filteredList.map((option, index) => {
+      <select
+        // defaultValue={option}
+        // value={options}
+        
+        onChange={(itemValue) => onValChange(itemValue)}
+        {...otherProps}
+      >
+        <option value="" hidden>{placeholder}</option>
+        {filteredList.map((item, index) => {
           return (
-            <option key={index} value={option.value}>
-              {option.label}
+            <option key={index} value={item.value}>
+              {item.label}
             </option>
           );
         })}

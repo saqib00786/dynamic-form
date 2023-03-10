@@ -2,6 +2,7 @@ import React from "react";
 import "./Form.css";
 import CloneComponent from "./CloneComponent";
 
+
 const Form = ({
   fields,
   values,
@@ -28,12 +29,32 @@ const Form = ({
 
         return (
           <div className="form-group" key={elementAttribs?.name}>
-            <CloneComponent {..._props} />
+              <CloneComponent {..._props} />
           </div>
         );
       })}
     </div>
   );
 };
+
+function getConditionalFields(fields, values) {
+  return fields.map(({ condition = null, ...field }) => {
+    if (!condition) return field;
+    //   const parentFieldName = condition?.fieldName;
+    //   let parentFieldValue = values[parentFieldName];
+    //   if (condition?.action == "hide") {
+    //     parentFieldValue =
+    //       typeof parentFieldValue !== "undefined"
+    //         ? parentFieldValue
+    //         : getDefaultValue(fields, parentFieldName, "defaultIsChecked");
+
+    //     // console.log("🚀 ~ file: FormLoop.tsx ~ line 91 ~ returnfields.map ~ parentFieldValue", field.name, parentFieldValue, JSON.parse(condition?.matchValue))
+    //     if (parentFieldValue == JSON.parse(condition?.matchValue)) {
+    //       return { ...field, condition, hidden: true };
+    //     }
+    //   }
+    //   return field;
+  });
+}
 
 export default Form;
