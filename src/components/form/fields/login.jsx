@@ -16,19 +16,19 @@ export const loginFields = [
   {
     inputType: "select",
     placeholder: "Select Gender",
-    label : 'Gender',
+    label: "Gender",
     options: [
       {
         label: "Male",
-        value: "Male",
+        value: 1,
       },
       {
         label: "Female",
-        value: "Female",
+        value: 2,
       },
       {
         label: "Other",
-        value: "Other",
+        value: 3,
       },
     ],
     name: "gender",
